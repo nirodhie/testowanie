@@ -3,14 +3,22 @@ package com.teska;
 public class Main {
 
     public static void main(String[] args) {
-    Cinema MojeKino = new Cinema("Sala główna",14);
-        System.out.println(MojeKino.getNazwaSali() + " ma " + MojeKino.getSeats() + " siedzeń");
+        Cinema MojeKino = new Cinema("Sala główna", 'D',15);
+        System.out.println(MojeKino.getNazwaSali());
+        System.out.println(MojeKino.getSiedzenia());
+        //
 
-        StringBuilder sb = new StringBuilder();
-        for (char A='A'; A<='Z';A++){
-            sb.append(A); //dodawaj kolejne litery do obiektu sb
-            System.out.println(sb);
-        }
+//        rozkladSiedzien('D',10);
+//StringBuilder sb = new StringBuilder();
+    }
+        public static void rozkladSiedzien(char rzedy, int kolumny)
+        {
+            for (char litera = 'A'; litera <= rzedy; litera++) {
+                for (int numer = 1; numer <= kolumny; numer++) {
+                    System.out.print(litera + "" + numer + " ");
+                }
+                System.out.println();
+            }
         }
     }
 

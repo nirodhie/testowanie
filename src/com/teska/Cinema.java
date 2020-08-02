@@ -4,21 +4,34 @@ import java.util.ArrayList;
 
 public class Cinema {
 
-    private String nazwaSali;
-    private int seats;
-    private ArrayList<String> nazwaSiedzenia;
+    private final String nazwaSali;
 
-    public Cinema(String nazwaSali, int seats) {
+
+    private ArrayList<String> siedzenia = new ArrayList<>();
+
+
+
+    public Cinema(String nazwaSali, char rzedy, int kolumny) {
         this.nazwaSali = nazwaSali;
-        this.seats = seats;
+
+            for (char litera = 'A'; litera <= rzedy; litera++) {
+                for (Integer numer = 1; numer <= kolumny; numer++) {
+
+                    this.siedzenia.add(litera + numer.toString() );
+
+                }
+            }
+
+
     }
+
 
     public String getNazwaSali() {
         return nazwaSali;
     }
 
-    public int getSeats() {
-        return seats;
+    public ArrayList<String> getSiedzenia() {
+        return siedzenia;
     }
 }
 
